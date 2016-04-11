@@ -35,11 +35,11 @@ def secant(f,x_k0,x_k1):			#define secant method function
 xlist=[-3.0,-1.5,0.1,0.2,0.75,2.0,6.0]
 for x in xlist:
 	n, y=newton(myfunc,dmyfunc,x)
-	lab5.write("%16.12e&%d&%f"%(y ,n,x))
+	lab5.write("%16.12e&%d&%f\n"%(y ,n,x))
 
 xlist=[-3.0,-1.5,0.1,0.2,0.75,1.0,2.0,6.0]
 for i in range(7):
 	y,n = secant(myfunc,xlist[i],xlist[i+1])
-	lab5.write("%16.12e & %d & %f & %f"%(n,y,xlist[i],xlist[i+1]))
+	lab5.write("%16.12e & %d & %f & %f\n"%(n,y,xlist[i],xlist[i+1]))
 
 lab5.close()
