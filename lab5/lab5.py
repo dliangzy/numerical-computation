@@ -22,11 +22,10 @@ def newton(f,df,x_k0):			#define newton-iteration function
 	return n, x_k1
 def secant(f,x_k0,x_k1):			#define secant method function
 	dalta=abs(x_k1-x_k0)
-	n=1
-	x_k1=x_k0-(f(x_k0)*(x_k1-x_k0))/(f(x_k1)-f(x_k0))
+	n=0
 	while (dalta>epsilon):
 	    temp=x_k1
-	    x_k1=x_k0-(f(x_k0)*(x_k1-x_k0))/(f(x_k1)-f(x_k0))
+	    x_k1=x_k1-(f(x_k1)*(x_k1-x_k0))/(f(x_k1)-f(x_k0))
 	    x_k0=temp
 	    dalta=abs(x_k1-x_k0)
 	    n=n+1
