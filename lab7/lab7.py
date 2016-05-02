@@ -17,8 +17,8 @@ def gauss(A):
 	n=len(A)
 	Y=A[:,n]
 	A=A[:,0:n]
-	X1=np.array([1. for i in range(n)])
-	X=np.array([0. for i in range(n)])
+	X1=np.array([0. for i in range(n)])
+	X=np.array([1. for i in range(n)])
 	for i in range(n):
 		g.append(Y[i]/A[i,i])
 		A[i]=A[i]/A[i,i]
@@ -28,7 +28,8 @@ def gauss(A):
 		step+=1
 	return X1, step
 #
-
+fp=open("result.dat","w")
 A=np.loadtxt("array.dat")
 x,n =gauss(A)
-np.savetxt("result.dat",x,delimiter="\n")
+np.savetxt("result.dat",x,newline="\\\ \n",fmt='%1.4e')
+print n

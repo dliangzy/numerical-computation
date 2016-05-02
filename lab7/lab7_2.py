@@ -30,8 +30,8 @@ def gauss(A,omiga):
 	return X1, step
 #
 fp=open("result_2.dat","w")
-for i in range(1,96):
+for i in range(1,97):
 	omiga=i/50.
 	A=np.loadtxt("array.dat")
 	x,n =gauss(A,omiga)
-	fp.write("%d & %d \\\  \n"%(i,n))
+	fp.write("%4.2f & %d \\\  \n"%(i/50.,n))
