@@ -22,7 +22,14 @@ def adams(func, init_y, my_range, h):
 	return y[i+3]
 my_range=np.array([0,1.5])
 r=np.array([0,1.5])
+y_x=3/(1+1.5**3)
 for i in [1,2,4,8]:
 	init_y=initial(func, 3, r, 0.1/i)
 	y=adams(func, init_y, my_range, 0.1/i)
-	print y
+	if(i==1):
+		err_1=err=abs(y-y_x)
+		o_k=0
+	else:
+		err=abs(y-y_x)
+		o_k=np.log(err_1/err)/np.log(i)
+	print 0.1/i,'&',y,'&', err,'&', o_k,'\\\ '
