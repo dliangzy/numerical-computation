@@ -32,4 +32,4 @@ for i in [1,2,4,8]:
 	else:
 		err=abs(y-y_x)
 		o_k=np.log(err_1/err)/np.log(i)
-	print 0.1/i,'&',y,'&', err,'&', o_k,'\\\ '
+	print "%6.4f & %16.12e & %16.12e & %6.4f \\\ "%(0.1/i, y, err, o_k)
